@@ -1,0 +1,13 @@
+zuul:
+  ribbonIsolationStrategy: THREAD
+  threadPool:
+    useSeparateThreadPools: true
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  routes:
+    devices:
+      path: /book/**
+      serviceId: book-service
+      stripPrefix: false
+      sensitiveHeaders: true
