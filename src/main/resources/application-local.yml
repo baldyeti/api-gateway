@@ -6,8 +6,13 @@ zuul:
     connect-timeout-millis: 60000
     socket-timeout-millis: 60000
   routes:
-    devices:
+    books:
       path: /book/**
       serviceId: book-service
+      stripPrefix: false
+      sensitiveHeaders: true
+    auth:
+      path: /oauth/**
+      serviceId: api-auth
       stripPrefix: false
       sensitiveHeaders: true
